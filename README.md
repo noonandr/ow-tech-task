@@ -1,14 +1,37 @@
 # ow-tech-task
 
-This template should help get you started developing with Vue 3 in Vite.
+Orbital Witness Technical Task
 
-## Recommended IDE Setup
+## Config
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Setup using node 18.14.0
 
-## Customize configuration
+## Tasks
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- [x] Plan project
+- [x] Create project
+- [ ] Remove unneeded pages etc
+- [ ] Create IconComponent component
+- [ ] Create TableRow component
+- [ ] Add icons for sorting up, neutral and down
+- [ ] Create AppButton component
+- [ ] Add icon for ProgressArrow
+- [ ] Create PaginationControls component
+- [ ] Create TableSort component
+- [ ] Create TitleListView
+- [ ] Add state via Vuex
+- [ ] Add GetTitleData call
+- [ ] Add TableSort to TitleListView
+- [ ] Add routing to pass page number to TitleListView
+- [ ] Build E2E test for TitleListView
+- [ ] Create TagPill component
+- [ ] Create DetailsMap component
+- [ ] Create TitleDetailsInfo component
+- [ ] Create TitleDetailsView
+- [ ] Add back button to TitleDetailsView
+- [ ] Add TitleDetailsInfo to TitleDetailsView
+- [ ] Add routing for titleID to TitleDetailsView
+- [ ] Build E2E test for TitleDetailsView
 
 ## Project Setup
 
