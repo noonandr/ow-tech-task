@@ -11,7 +11,7 @@ Setup using node 18.14.0
 - [x] Plan project
 - [x] Create project
 - [x] Remove unneeded pages etc
-- [ ] Create IconComponent component
+- [x] Create IconComponent component
 - [ ] Create TableRow component
 - [ ] Add icons for sorting up, neutral and down
 - [ ] Create AppButton component
