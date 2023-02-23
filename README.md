@@ -45,10 +45,16 @@ npm install
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Run Unit Test
 
 ```sh
-npm run build
+npm run test
+```
+
+### Run Unit Test
+
+```sh
+npm run coverage
 ```
 
 ### Run Headed Component Tests with [Cypress Component Testing](https://on.cypress.io/component)
@@ -64,17 +70,24 @@ npm run test:e2e:dev
 ```
 
 This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
 
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
 ```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Run End-to-End Tests on Build with [Cypress](https://www.cypress.io/)
+It is recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+
+```sh
+npm run build
+npm run test:e2e
+```
+

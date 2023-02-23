@@ -1,8 +1,5 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-  <main>
-    TitleListView
-  </main>
+  <main>TitleListView</main>
 </template>
