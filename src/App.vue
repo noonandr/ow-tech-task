@@ -6,4 +6,9 @@ import { RouterLink, RouterView } from "vue-router";
   <RouterView />
 </template>
 
-<style scoped></style>
+<style>
+body {
+  font-family: "Poppins", serif;
+  line-height: 1.8;
+}
+</style>
