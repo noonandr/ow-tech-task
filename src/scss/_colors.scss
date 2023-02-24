@@ -1,0 +1,17 @@
+// pure colors
+$color-blac: #000;
+$color-grey: #c2c2c2;
+$color-white: #fff;
+$color-organge: #ff6c50;
+$color-dark-blue: #006a87;
+$color-turquoise: #26deeb;
+
+// named colors
+$brand-blue: $color-dark-blue;
+$background-default: $color-white;
+$background-hover: $color-grey;
+
+// color usage
+$table-background: $background-default;
+$table-border: $brand-blue;
+$table-row-hover: $background-hover;

@@ -12,7 +12,7 @@ Setup using node 18.14.0
 - [x] Create project
 - [x] Remove unneeded pages etc
 - [ ] Create IconComponent component
-- [ ] Create TableRow component
+- [x] Create TableRow component
 - [ ] Add icons for sorting up, neutral and down
 - [ ] Create AppButton component
 - [ ] Add icon for ProgressArrow

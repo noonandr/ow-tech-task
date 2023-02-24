@@ -1,7 +1,7 @@
 <template>
   <div class="table-row">
-    <span class="title-number" v-text="titleNumber" />
-    <span class="tenure" v-text="tenure" />
+    <span class="table-row-cell title-number" v-text="titleNumber" />
+    <span class="table-row-cell tenure" v-text="tenure" />
   </div>
 </template>
 
@@ -22,7 +22,23 @@ export default defineComponent({
   display: flex;
   flex: 1;
   align-items: center;
-  flex-direction: column;
-  color: #3b3b3b;
+  flex-direction: row;
+  background: $table-background;
+  border: 1px $table-border;
+  border-style: none solid solid solid;
+
+  &:hover {
+    background: $table-row-hover;
+    cursor: pointer;
+  }
+}
+
+.table-row-cell {
+  flex: 1 0 50%;
+  padding: size(1) size(2);
+}
+
+.tenure {
+  border-left: 1px solid $table-border;
 }
 </style>
