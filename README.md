@@ -15,7 +15,7 @@ Setup using node 18.14.0
 - [x] Create TableRow component
 - [x] Add icons for sorting up, neutral and down
 - [x] Create AppButton component
-- [ ] Add icon for ProgressArrow
+- [x] Add icon for ProgressArrow
 - [ ] Create PaginationControls component
 - [ ] Create TableSort component
 - [ ] Create TitleListView
