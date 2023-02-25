@@ -13,8 +13,8 @@ Setup using node 18.14.0
 - [x] Remove unneeded pages etc
 - [x] Create IconComponent component
 - [x] Create TableRow component
-- [ ] Add icons for sorting up, neutral and down
-- [ ] Create AppButton component
+- [x] Add icons for sorting up, neutral and down
+- [x] Create AppButton component
 - [ ] Add icon for ProgressArrow
 - [ ] Create PaginationControls component
 - [ ] Create TableSort component
