@@ -5,6 +5,16 @@
       :class="{ disabled: currentPage === 1 }"
       @click="changePage('previous')"
     >
+      <div class="progress-arrow-previous">
+        <IconComponent
+          class="icon-svg progress-arrow"
+          icon-name="progress-arrow"
+          width="6"
+          viewBox="0 0 6 12"
+        >
+          <progress-arrow />
+        </IconComponent>
+      </div>
       Previous
     </div>
     <div
@@ -13,14 +23,31 @@
       @click="changePage('next')"
     >
       Next
+      <div class="progress-arrow-next">
+        <IconComponent
+          class="icon-svg progress-arrow"
+          icon-name="progress-arrow"
+          width="6"
+          viewBox="0 0 6 12"
+        >
+          <progress-arrow/>
+        </IconComponent>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import IconComponent from "@/components/IconComponent.vue";
+import ProgressArrow from "@/components/icons/ProgressArrow.vue";
+
 export default {
   name: "PaginationControls",
   emits: ["page"],
+  components: {
+    IconComponent,
+    ProgressArrow
+  },
   data() {
     return {
       currentPage: this.startPage,
@@ -57,8 +84,19 @@ export default {
 }
 
 .pagination-controls-button {
+  display: flex;
+  align-items: center;
   user-select: none;
   cursor: pointer;
+}
+
+.progress-arrow-previous {
+  padding: size(1) size(2);
+  transform: rotateY(180deg);
+}
+
+.progress-arrow-next {
+  padding: size(1) size(2);
 }
 
 .disabled {
