@@ -1,12 +1,30 @@
-$font-size-larger: 24px;
-$font-size-medium: 22px;
-$font-size-large: 18px;
-$font-size-medium: 16px;
-$font-size-small: 12px;
-$font-size-tiny: 10px;
+@import './_variables.scss';
 
 @font-face {
   font-family: "Freebooter Scirpt";
   src: local("Freebooter Scirpt"),
    url(./fonts/FREEBSC_.ttf) format("truetype");
+}
+
+h1,
+.title {
+  margin: 0 0 $font-size-large;
+  font-size: $font-size-larger;
+  line-height: 1.2;
+}
+
+@media screen and (min-width: $screen-medium) {
+  h1,
+  .title {
+    margin: 0 0 $font-size-larger;
+    font-size: $font-size-big;
+  }
+}
+
+@media screen and (min-width: $screen-large) {
+  h1,
+  .title {
+    margin: 0 0 $font-size-big;
+    font-size: $font-size-biggest;
+  }
 }
