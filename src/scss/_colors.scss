@@ -11,6 +11,8 @@ $brand-blue: $color-dark-blue;
 $brand-orange: $color-organge;
 $background-default: $color-white;
 $background-hover: $color-grey;
+$text: $brand-blue;
+$text-inverted: $color-white;
 
 // status
 $active: $brand-orange;
@@ -18,7 +20,10 @@ $deactive: $color-grey;
 
 // table
 $table-background: $background-default;
+$table-header-background: $brand-orange;
+$table-header-text: $text-inverted;
 $table-border: $brand-blue;
+$table-border-inverted: $text-inverted;
 $table-row-hover: $background-hover;
 
 // buttons
