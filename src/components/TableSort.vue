@@ -7,6 +7,7 @@
       :sortDirection="sortDirection"
     />
     <slot :pageData="pageData"></slot>
+    <PaginationControls :startPage="startPage" :pageRange="pageRange" @page="page"/>
   </div>
 </template>
 
@@ -14,12 +15,14 @@
 import { defineComponent } from "vue";
 
 import TableHeader from "@/components/TableHeader.vue";
+import PaginationControls from "@/components/PaginationControls.vue";
 
 export default defineComponent({
   name: "TableSort",
   emits: ["pageData"],
   components: {
-    TableHeader
+    TableHeader,
+    PaginationControls
   },
   data() {
     return {
@@ -94,7 +97,18 @@ export default defineComponent({
         })
         this.pageData = filteredData;
         this.$emit("pageData", filteredData);
+        this.$router.replace(
+          {
+            query: Object.assign({ ...this.$route.query }, { page: this.currentPage, direction: this.sortDirection }),
+          },
+          () => {}
+        )
       });
+    }
+  },
+  computed: {
+    pageRange() {
+      return Math.ceil(this.data.length / this.numberOfRows);
     }
   },
   mounted() {

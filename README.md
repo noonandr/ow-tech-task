@@ -20,12 +20,11 @@ Setup using node 18.14.0
 - [x] Create TableHeadItem component
 - [x] Create TableHeader component
 - [x] Create TableSort component
-- [ ] Create TitleListView
-- [ ] Add state via Vuex
-- [ ] Add GetTitleData call
-- [ ] Add TableSort to TitleListView
-- [ ] Add routing to pass page number to TitleListView
-- [ ] Build E2E test for TitleListView
+- [x] Create TitleListView
+- [x] Add state via Vuex
+- [x] Add GetTitleData call
+- [x] Add TableSort to TitleListView
+- [x] Add routing to pass page number to TitleListView
 - [ ] Create TagPill component
 - [ ] Create DetailsMap component
 - [ ] Create TitleDetailsInfo component
