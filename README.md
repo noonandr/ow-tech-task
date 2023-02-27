@@ -16,7 +16,7 @@ Setup using node 18.14.0
 - [x] Add icons for sorting up, neutral and down
 - [x] Create AppButton component
 - [x] Add icon for ProgressArrow
-- [ ] Create PaginationControls component
+- [x] Create PaginationControls component
 - [x] Create TableHeadItem component
 - [x] Create TableHeader component
 - [x] Create TableSort component
