@@ -17,7 +17,9 @@ Setup using node 18.14.0
 - [x] Create AppButton component
 - [x] Add icon for ProgressArrow
 - [ ] Create PaginationControls component
-- [ ] Create TableSort component
+- [x] Create TableHeadItem component
+- [x] Create TableHeader component
+- [x] Create TableSort component
 - [ ] Create TitleListView
 - [ ] Add state via Vuex
 - [ ] Add GetTitleData call
