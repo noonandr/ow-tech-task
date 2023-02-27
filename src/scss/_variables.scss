@@ -1,1 +1,26 @@
-$border-radius: 4px;
+// -- typography
+
+$font-size-biggest: 42px;
+$font-size-big: 30px;
+$font-size-larger: 24px;
+$font-size-medium: 22px;
+$font-size-large: 18px;
+$font-size-paragraph: 16px;
+$font-size-normal: 14px;
+$font-size-small: 12px;
+$font-size-tiny: 10px;
+
+
+// -- border
+
+$border-radius: 3px;
+
+
+// -- layout
+
+$screen-small: 480px;
+$screen-medium: 769px;
+$screen-large: 1024px;
+$screen-larger: 1200px;
+$screen-extra-large: 1400px;
+$screen-huge: 1800px;

@@ -11,4 +11,9 @@ body {
   font-family: "Poppins", serif;
   line-height: 1.8;
 }
+
+.app {
+  display: flex;
+  justify-content: center;
+}
 </style>
