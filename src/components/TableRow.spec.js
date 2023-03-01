@@ -15,4 +15,17 @@ describe("TableRow", () => {
     expect(tableRow.text()).toContain("243751");
     expect(tableRow.text()).toContain("Freehold");
   })
+
+  it("should hide the data when data hideData is true", async () => {
+    await tableRow.setProps({
+      titleNumber: "243751",
+      tenure: "Freehold",
+      hideData: true
+    })
+    tableRow.vm.$nextTick();
+    const disabledRowClass = tableRow.find(".disabled-row");
+    expect(disabledRowClass.exists()).toBe(true)
+    const hidelass = tableRow.find(".hide");
+    expect(hidelass.exists()).toBe(true)
+  })  
 })
