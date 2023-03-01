@@ -27,12 +27,11 @@ Setup using node 18.14.0
 - [x] Add routing to pass page number to TitleListView
 - [x] Create TagPill component
 - [x] Create GoogleMap component
-- [ ] Create TitleDetailsInformation component
+- [x] Create TitleDetailsInformation component
 - [ ] Create TitleDetailsView
 - [ ] Add back button to TitleDetailsView
 - [ ] Add TitleDetailsInfo to TitleDetailsView
 - [ ] Add routing for titleID to TitleDetailsView
-- [ ] Build E2E test for TitleDetailsView
 
 ## Project Setup
 
