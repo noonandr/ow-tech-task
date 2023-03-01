@@ -28,10 +28,10 @@ Setup using node 18.14.0
 - [x] Create TagPill component
 - [x] Create GoogleMap component
 - [x] Create TitleDetailsInformation component
-- [ ] Create TitleDetailsView
-- [ ] Add back button to TitleDetailsView
-- [ ] Add TitleDetailsInfo to TitleDetailsView
-- [ ] Add routing for titleID to TitleDetailsView
+- [x] Create TitleDetailsView
+- [x] Add back button to TitleDetailsView
+- [x] Add TitleDetailsInfo to TitleDetailsView
+- [x] Add routing for titleID to TitleDetailsView
 
 ## Project Setup
 
