@@ -25,9 +25,9 @@ Setup using node 18.14.0
 - [x] Add GetTitleData call
 - [x] Add TableSort to TitleListView
 - [x] Add routing to pass page number to TitleListView
-- [ ] Create TagPill component
-- [ ] Create DetailsMap component
-- [ ] Create TitleDetailsInfo component
+- [x] Create TagPill component
+- [ ] Create GoogleMap component
+- [ ] Create TitleDetailsInformation component
 - [ ] Create TitleDetailsView
 - [ ] Add back button to TitleDetailsView
 - [ ] Add TitleDetailsInfo to TitleDetailsView
