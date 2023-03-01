@@ -1,18 +1,14 @@
 <script>
 import { mapGetters } from "vuex";
 
-import TableHeadItem from "../components/TableHeadItem.vue";
-import TableHeader from "../components/TableHeader.vue";
 import TableSort from "../components/TableSort.vue";
 import TableRow from "../components/TableRow.vue";
 
 export default {
   name: "TitleListView",
   components: {
-    TableHeadItem,
-    TableHeader,
     TableSort,
-    TableRow
+    TableRow,
   },
   computed: {
     ...mapGetters(["titles"]),
@@ -30,28 +26,27 @@ export default {
       const divider = 5;
       const remainder = numberofRows % divider;
       return !remainder ? divider - numberofRows : divider - remainder;
-    }
+    },
   },
   mounted() {
     this.$store.dispatch("GetTitleData");
-  }
+  },
 };
 </script>
 
 <template>
   <main class="title-list-view">
-    <h1 class="title title-list-view-title ">
-      OW Titles
-    </h1>
+    <h1 class="title title-list-view-title">OW Titles</h1>
     <TableSort
       :titles="[
         { title: 'Title Number', column: 'titleNumber', enable: true },
-        { title: 'Class of Title', column: 'classOfTitle', enable: false }
+        { title: 'Class of Title', column: 'classOfTitle', enable: false },
       ]"
       column="Title Number"
       :startPage="page"
       :direction="direction"
       :data="titles"
+      v-if="titles.length"
     >
       <template v-slot="props">
         <div class="ow-titles-array">
@@ -63,28 +58,19 @@ export default {
             <router-link
               :to="{
                 name: 'title-details',
-                params: { id: entry['Title Number'] }
+                params: { id: entry['Title Number'] },
               }"
             >
               <TableRow
-              :titleNumber="entry['Title Number']"
-              :tenure="entry.Tenure"
-            />
+                :titleNumber="entry['Title Number']"
+                :tenure="entry.Tenure"
+              />
             </router-link>
           </div>
         </div>
-        <div class="ow-titles-array">
-          <div
-            class="ow-title"
-            v-for="extra in missingRows"
-            :key="extra"
-            v-if="page === totalPages"
-          >
-            <TableRow
-              titleNumber="Empty"
-              tenure="Empty"
-              :hideData="true"
-            />
+        <div class="ow-titles-array" v-if="page === totalPages">
+          <div class="ow-title" v-for="extra in missingRows" :key="extra">
+            <TableRow titleNumber="Empty" tenure="Empty" :hideData="true" />
           </div>
         </div>
       </template>

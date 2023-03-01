@@ -4,6 +4,6 @@ import titles from "./modules/titles.js";
 
 export default createStore({
   modules: {
-    titles
-  }
+    titles,
+  },
 });

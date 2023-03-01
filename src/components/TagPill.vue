@@ -8,13 +8,13 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "TagPill",
   props: {
-    tag: String
+    tag: String,
   },
   computed: {
     tagClass() {
       return this.tag ? this.tag.toLowerCase() : null;
-    }
-  }
+    },
+  },
 });
 </script>
 

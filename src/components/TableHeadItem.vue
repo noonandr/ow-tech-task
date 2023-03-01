@@ -50,14 +50,14 @@ export default {
   components: {
     IconComponent,
     SortArrow,
-    SortNil
+    SortNil,
   },
   props: {
     title: String,
     column: String,
     direction: String,
-    enable: Boolean
-  }
+    enable: Boolean,
+  },
 };
 </script>
 

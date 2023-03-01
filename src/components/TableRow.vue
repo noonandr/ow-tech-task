@@ -23,8 +23,8 @@ export default defineComponent({
     tenure: String,
     hideData: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 });
 </script>

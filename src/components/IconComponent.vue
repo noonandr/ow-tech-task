@@ -20,24 +20,24 @@ export default {
   props: {
     iconName: {
       type: String,
-      default: 'box'
+      default: "box",
     },
     width: {
-      type: [Number, String]
+      type: [Number, String],
     },
     height: {
-      type: [Number, String]
+      type: [Number, String],
     },
     iconColor: {
       type: String,
-      default: 'currentColor'
+      default: "currentColor",
     },
     transform: {
       type: String,
-      default: 'rotate(0deg)'
-    }
-  }
-}
+      default: "rotate(0deg)",
+    },
+  },
+};
 </script>
 
 <style scoped>

@@ -30,7 +30,7 @@
           width="6"
           viewBox="0 0 6 12"
         >
-          <progress-arrow/>
+          <progress-arrow />
         </IconComponent>
       </div>
     </div>
@@ -46,17 +46,17 @@ export default {
   emits: ["page"],
   components: {
     IconComponent,
-    ProgressArrow
+    ProgressArrow,
   },
   data() {
     return {
       currentPage: this.startPage,
-      numberOfPages: this.pageRange
+      numberOfPages: this.pageRange,
     };
   },
   props: {
     startPage: Number,
-    pageRange: Number
+    pageRange: Number,
   },
   methods: {
     changePage(direction) {
@@ -69,13 +69,12 @@ export default {
         this.currentPage = page;
         this.$emit("page", page);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped lang="scss">
-
 .pagination-controls {
   display: flex;
   flex: 1;

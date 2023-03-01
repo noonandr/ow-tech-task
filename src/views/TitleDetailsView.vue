@@ -8,12 +8,12 @@ export default {
   name: "TitleListView",
   components: {
     AppButton,
-    TitleDetailsInfomration
+    TitleDetailsInfomration,
   },
   data() {
     return {
-      loading: true
-    }
+      loading: true,
+    };
   },
   computed: {
     ...mapGetters(["titles"]),
@@ -22,16 +22,15 @@ export default {
     },
     information() {
       const id = this.$route.params.id;
-      const results =
-        this.titles.find(item => item['Title Number'] === id);
+      const results = this.titles.find((item) => item["Title Number"] === id);
       return results;
-    }
+    },
   },
   mounted() {
     this.$store.dispatch("GetTitleData").then(() => {
       this.loading = false;
     });
-  }
+  },
 };
 </script>
 
@@ -39,9 +38,7 @@ export default {
   <main class="title-details-view">
     <div class="title-details-view-title">
       <router-link :to="{ name: 'title-list' }">
-        <AppButton>
-          Back
-        </AppButton>
+        <AppButton> Back </AppButton>
       </router-link>
     </div>
     <TitleDetailsInfomration

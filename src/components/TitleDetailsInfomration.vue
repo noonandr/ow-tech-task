@@ -13,7 +13,7 @@
         v-text="information['Property Address']"
       />
     </div>
-    <GoogleMap :lat="information.Y" :lng="information.X"/>
+    <GoogleMap :lat="information.Y" :lng="information.X" />
   </div>
 </template>
 
@@ -27,11 +27,11 @@ export default defineComponent({
   name: "TitleDetailsInfomration",
   components: {
     TagPill,
-    GoogleMap
+    GoogleMap,
   },
   props: {
-    information: Object
-  }
+    information: Object,
+  },
 });
 </script>
 
@@ -55,6 +55,6 @@ export default defineComponent({
 }
 
 .title-details-property-address {
-  margin-bottom: size(3)
+  margin-bottom: size(3);
 }
 </style>
