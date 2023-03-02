@@ -45,7 +45,11 @@ npm install
 
 ## Project Setup
 
-Add .env file provided to root for Google Maps API
+Add .env file to root for Google Maps API and insert key provided
+
+```
+VITE_GOOGLE_MAPS_API=
+```
 
 ### Compile and Hot-Reload for Development
 
