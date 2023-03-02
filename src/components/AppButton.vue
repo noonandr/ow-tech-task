@@ -3,18 +3,18 @@ export default {
   props: {
     active: {
       type: Boolean,
-      default: true
+      default: true,
     },
     size: {
       type: String,
-      default: "medium"
+      default: "medium",
     },
     type: {
       type: String,
-      default: "primary"
-    }
-  }
-}
+      default: "primary",
+    },
+  },
+};
 </script>
 
 <template>
@@ -50,7 +50,7 @@ export default {
 
 .primary {
   background: $primary-button;
-  
+
   &:hover {
     background: desaturate($primary-button, 20%);
   }

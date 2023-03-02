@@ -7,7 +7,11 @@
       :sortDirection="sortDirection"
     />
     <slot :pageData="pageData"></slot>
-    <PaginationControls :startPage="startPage" :pageRange="pageRange" @page="page"/>
+    <PaginationControls
+      :startPage="startPage"
+      :pageRange="pageRange"
+      @page="page"
+    />
   </div>
 </template>
 
@@ -22,7 +26,7 @@ export default defineComponent({
   emits: ["pageData"],
   components: {
     TableHeader,
-    PaginationControls
+    PaginationControls,
   },
   data() {
     return {
@@ -30,7 +34,7 @@ export default defineComponent({
       copy: JSON.parse(JSON.stringify(this.data)),
       sortColumn: this.column,
       currentPage: this.startPage,
-      sortDirection: this.direction
+      sortDirection: this.direction,
     };
   },
   props: {
@@ -40,12 +44,12 @@ export default defineComponent({
     direction: String,
     numberOfRows: {
       type: Number,
-      default: 5
+      default: 5,
     },
     startPage: {
       type: Number,
-      default: 1
-    }
+      default: 1,
+    },
   },
   methods: {
     sort(column) {
@@ -53,7 +57,8 @@ export default defineComponent({
         this.sortDirection = "";
         this.sortColumn = "";
       } else if (column === this.sortColumn) {
-        this.sortDirection = this.sortDirection === "ascending" ? "descending" : "ascending";
+        this.sortDirection =
+          this.sortDirection === "ascending" ? "descending" : "ascending";
         this.sortColumn = column;
       } else {
         this.sortDirection = "ascending";
@@ -62,17 +67,15 @@ export default defineComponent({
       this.page(this.currentPage);
     },
     sortBy() {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         const column = this.column;
         let data = this.copy;
         let direction = this.sortDirection;
         if (column) {
           data.sort((firstItem, secondItem) => {
-            return firstItem[column] <
-              secondItem[column]
+            return firstItem[column] < secondItem[column]
               ? -1
-              : firstItem[column] >
-                secondItem[column]
+              : firstItem[column] > secondItem[column]
               ? 1
               : 0;
           });
@@ -89,33 +92,35 @@ export default defineComponent({
     },
     page(page) {
       this.currentPage = page;
-      this.sortBy().then( data => {
+      this.sortBy().then((data) => {
         const filteredData = data.filter((row, index) => {
           let start = (this.currentPage - 1) * this.numberOfRows;
           let end = this.currentPage * this.numberOfRows;
           if (index >= start && index < end) return true;
-        })
+        });
         this.pageData = filteredData;
         this.$emit("pageData", filteredData);
         this.$router.replace(
           {
-            query: Object.assign({ ...this.$route.query }, { page: this.currentPage, direction: this.sortDirection }),
+            query: Object.assign(
+              { ...this.$route.query },
+              { page: this.currentPage, direction: this.sortDirection }
+            ),
           },
           () => {}
-        )
+        );
       });
-    }
+    },
   },
   computed: {
     pageRange() {
       return Math.ceil(this.data.length / this.numberOfRows);
-    }
+    },
   },
   mounted() {
     this.page(this.currentPage);
-  }
+  },
 });
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

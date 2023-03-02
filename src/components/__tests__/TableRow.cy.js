@@ -5,8 +5,8 @@ describe("TableRow", () => {
     cy.mount(TableRow, {
       props: {
         titleNumber: "243751",
-        tenure: "Freehold"
-      }
+        tenure: "Freehold",
+      },
     });
   });
 
@@ -14,8 +14,8 @@ describe("TableRow", () => {
     cy.mount(TableRow, {
       props: {
         titleNumber: "243751",
-        tenure: "Freehold"
-      }
+        tenure: "Freehold",
+      },
     });
     cy.get(".title-number").should("contain", "243751");
     cy.get(".tenure").should("contain", "Freehold");

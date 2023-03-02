@@ -1,0 +1,18 @@
+version: "3.8"
+name: ow-tech-task
+services:
+  vue:
+    container_name: ow_tech_task_front_end
+    image: node:lts
+    build: .
+    ports:
+      - 5177:5177
+    env_file:
+      - ./.env
+  nginx:
+    image: nginx:1.15
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 80:80
+      - 443:443
