@@ -28,3 +28,17 @@ h1,
     font-size: $font-size-biggest;
   }
 }
+
+
+.paragraph {
+  margin: 0 0 $font-size-paragraph;
+  font-size: $font-size-normal;
+  line-height: 1.2;
+}
+
+.table-data,
+.label {
+  margin: 0;
+  font-size: $font-size-paragraph;
+  line-height: 1.8;
+}

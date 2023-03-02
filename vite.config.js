@@ -7,18 +7,21 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
   plugins: [vue()],
   test: {
-    environment: 'happy-dom',
+    environment: "happy-dom",
   },
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  server: {
+    port: 5177,
+  },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@/scss";`
-      }
-    }
+        additionalData: `@import "@/scss";`,
+      },
+    },
   },
 });

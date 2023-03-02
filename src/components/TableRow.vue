@@ -1,7 +1,15 @@
 <template>
-  <div class="table-row">
-    <span class="table-row-cell title-number" v-text="titleNumber" />
-    <span class="table-row-cell tenure" v-text="tenure" />
+  <div class="table-row" :class="{ 'disabled-row': hideData }">
+    <span
+      class="table-data table-row-cell title-number"
+      :class="{ hide: hideData }"
+      v-text="titleNumber"
+    />
+    <span
+      class="table-data table-row-cell tenure"
+      :class="{ hide: hideData }"
+      v-text="tenure"
+    />
   </div>
 </template>
 
@@ -13,6 +21,10 @@ export default defineComponent({
   props: {
     titleNumber: String,
     tenure: String,
+    hideData: {
+      type: Boolean,
+      default: false,
+    },
   },
 });
 </script>
@@ -33,9 +45,22 @@ export default defineComponent({
   }
 }
 
+.disabled-row {
+  &:hover {
+    background: none;
+    cursor: pointer;
+  }
+}
+
 .table-row-cell {
   flex: 1 0 50%;
   padding: size(1) size(2);
+}
+
+.hide {
+  color: transparent;
+  user-select: none;
+  cursor: default;
 }
 
 .tenure {

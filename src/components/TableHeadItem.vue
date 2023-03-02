@@ -1,6 +1,6 @@
 <template>
   <div class="table-head-item">
-    <span v-text="title" />
+    <span class="table-data" v-text="title" />
     <div class="indicator" :class="[column]" v-if="enable">
       <div class="controls">
         <div class="sort-arrow sort-arrow-ascending">
@@ -50,14 +50,14 @@ export default {
   components: {
     IconComponent,
     SortArrow,
-    SortNil
+    SortNil,
   },
   props: {
     title: String,
     column: String,
     direction: String,
-    enable: Boolean
-  }
+    enable: Boolean,
+  },
 };
 </script>
 

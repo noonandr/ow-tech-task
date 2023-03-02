@@ -25,20 +25,27 @@ Setup using node 18.14.0
 - [x] Add GetTitleData call
 - [x] Add TableSort to TitleListView
 - [x] Add routing to pass page number to TitleListView
-- [ ] Create TagPill component
-- [ ] Create DetailsMap component
-- [ ] Create TitleDetailsInfo component
-- [ ] Create TitleDetailsView
-- [ ] Add back button to TitleDetailsView
-- [ ] Add TitleDetailsInfo to TitleDetailsView
-- [ ] Add routing for titleID to TitleDetailsView
-- [ ] Build E2E test for TitleDetailsView
+- [x] Create TagPill component
+- [x] Create GoogleMap component
+- [x] Create TitleDetailsInformation component
+- [x] Create TitleDetailsView
+- [x] Add back button to TitleDetailsView
+- [x] Add TitleDetailsInfo to TitleDetailsView
+- [x] Add routing for titleID to TitleDetailsView
+- [x] Create LoadingAnimation
+- [x] Create ToastMessage
+- [x] Add LoadingAnimation and ToastMessage to TitleListView
+- [x] Add LoadingAnimation and ToastMessage to TitleDetailsView
 
 ## Project Setup
 
 ```sh
 npm install
 ```
+
+## Project Setup
+
+Add .env file provided to root for Google Maps API
 
 ### Compile and Hot-Reload for Development
 
@@ -58,20 +65,6 @@ npm run test
 npm run coverage
 ```
 
-### Run Headed Component Tests with [Cypress Component Testing](https://on.cypress.io/component)
-
-```sh
-npm run test:unit:dev # or `npm run test:unit` for headless testing
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
@@ -84,11 +77,16 @@ npm run lint
 npm run build
 ```
 
-### Run End-to-End Tests on Build with [Cypress](https://www.cypress.io/)
-It is recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
 ```sh
-npm run build
-npm run test:e2e
+npm run preview
 ```
 
+### Docker
+
+```sh
+docker build -t ow-tech-task:dev .
+```
+
+```sh
+docker run -v ${PWD}:/app -v /app/node_modules -p 5177:5177 --rm ow-tech-task:dev
+```

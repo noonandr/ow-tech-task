@@ -19,18 +19,18 @@ import TableHeadItem from "@/components/TableHeadItem.vue";
 export default {
   name: "TableHeader",
   components: {
-    TableHeadItem
+    TableHeadItem,
   },
   props: {
     titles: Array,
     sortColumn: String,
-    sortDirection: String
+    sortDirection: String,
   },
   methods: {
-    sort(column, type) {
+    sort(column) {
       this.$emit("sort", column);
-    }
-  }
+    },
+  },
 };
 </script>
 
