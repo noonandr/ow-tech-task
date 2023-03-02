@@ -1,12 +1,12 @@
 <template>
   <div class="table-row" :class="{ 'disabled-row': hideData }">
     <span
-      class="table-row-cell title-number"
+      class="table-data table-row-cell title-number"
       :class="{ hide: hideData }"
       v-text="titleNumber"
     />
     <span
-      class="table-row-cell tenure"
+      class="table-data table-row-cell tenure"
       :class="{ hide: hideData }"
       v-text="tenure"
     />

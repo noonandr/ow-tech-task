@@ -25,6 +25,7 @@ const map = ref([]);
 
 onMounted(async () => {
   await loader.load().then((google) => {
+    // set google map
     map.value = new google.maps.Map(document.getElementById("map"), {
       center: { lat: props.lat, lng: props.lng },
       zoom: 17,
@@ -33,6 +34,7 @@ onMounted(async () => {
       fullscreenControl: false,
       zoomControl: false,
     });
+    // set marker on generated google map
     new google.maps.Marker({
       position: { lat: props.lat, lng: props.lng },
       map: map.value,
@@ -45,9 +47,9 @@ onMounted(async () => {
   <div id="map" class="map" />
 </template>
 
-<style>
+<style scoped lang="scss">
 .map {
   width: 100%;
-  height: 300px;
+  height: size(40);
 }
 </style>

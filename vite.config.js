@@ -15,7 +15,7 @@ export default defineConfig({
     },
   },
   server: {
-    port: 5177
+    port: 5177,
   },
   css: {
     preprocessorOptions: {

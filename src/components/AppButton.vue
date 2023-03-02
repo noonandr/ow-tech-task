@@ -38,7 +38,7 @@ export default {
   text-decoration: none;
   vertical-align: middle;
   border: none;
-  border-radius: 3px;
+  border-radius: $border-radius;
   outline: none;
   cursor: pointer;
   white-space: nowrap;

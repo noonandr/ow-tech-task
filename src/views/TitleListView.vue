@@ -1,14 +1,24 @@
 <script>
 import { mapGetters } from "vuex";
 
-import TableSort from "../components/TableSort.vue";
-import TableRow from "../components/TableRow.vue";
+import ToastMessage from "@/components/ToastMessage.vue";
+import LoadingAnimation from "@/components/LoadingAnimation.vue";
+import TableSort from "@/components/TableSort.vue";
+import TableRow from "@/components/TableRow.vue";
 
 export default {
   name: "TitleListView",
   components: {
+    ToastMessage,
+    LoadingAnimation,
     TableSort,
     TableRow,
+  },
+  data() {
+    return {
+      loading: false,
+      error: null,
+    };
   },
   computed: {
     ...mapGetters(["titles"]),
@@ -22,6 +32,7 @@ export default {
       return this.$route.query.direction;
     },
     missingRows() {
+      // Calculate missing rows so that table is always five rows height
       const numberofRows = this.titles.length;
       const divider = 5;
       const remainder = numberofRows % divider;
@@ -29,7 +40,19 @@ export default {
     },
   },
   mounted() {
-    this.$store.dispatch("GetTitleData");
+    if (this.titles.length === 0) {
+      this.loading = true;
+    }
+    this.$store
+      .dispatch("GetTitleData")
+      .then(() => {
+        this.loading = false;
+        this.eror = null;
+      })
+      .catch((error) => {
+        this.error = error.message;
+        this.loading = false;
+      });
   },
 };
 </script>
@@ -37,6 +60,8 @@ export default {
 <template>
   <main class="title-list-view">
     <h1 class="title title-list-view-title">OW Titles</h1>
+    <ToastMessage type="error" :message="error" v-if="error" />
+    <LoadingAnimation v-if="loading" />
     <TableSort
       :titles="[
         { title: 'Title Number', column: 'titleNumber', enable: true },
@@ -98,6 +123,6 @@ export default {
 }
 
 .table-sort {
-  flex: 0 1 600px;
+  flex: 0 1 size(75);
 }
 </style>

@@ -12,14 +12,20 @@ const mutations = {
 
 const actions = {
   GetTitleData({ commit }) {
-    let URL =
-      "https://owfetechtask.blob.core.windows.net/titledata/testdata.json";
-    axios
-      .get(URL)
-      .then((response) => response.data)
-      .then((titles) => {
-        commit("setTitlesData", titles);
-      });
+    return new Promise((resolve, reject) => {
+      let URL =
+        "https://owfetechtask.blob.core.windows.net/titledata/testdata.json";
+      axios
+        .get(URL)
+        .then((response) => response.data)
+        .then((titles) => {
+          commit("setTitlesData", titles);
+          resolve("success");
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
   },
 };
 
