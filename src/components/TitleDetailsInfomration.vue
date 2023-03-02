@@ -9,7 +9,7 @@
     </div>
     <div class="title-details-infomration">
       <span
-        class="title-details-property-address"
+        class="paragraph title-details-property-address"
         v-text="information['Property Address']"
       />
     </div>

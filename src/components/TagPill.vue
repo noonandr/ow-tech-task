@@ -1,5 +1,5 @@
 <template>
-  <div class="tag-pill" v-text="tag" :class="tagClass" />
+  <div class="labels tag-pill" v-text="tag" :class="tagClass" />
 </template>
 
 <script>
@@ -22,10 +22,10 @@ export default defineComponent({
 .tag-pill {
   display: flex;
   align-items: center;
-  height: 40px;
-  padding: 0 20px;
+  height: size(5);
+  padding: 0 size(2.5);
   background: $deactive;
-  border-radius: 20px;
+  border-radius: size(2.5);
 }
 
 .freehold {

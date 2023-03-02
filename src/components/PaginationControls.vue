@@ -5,7 +5,7 @@
       :class="{ disabled: currentPage === 1 }"
       @click="changePage('previous')"
     >
-      <div class="progress-arrow-previous">
+      <div class="label progress-arrow-previous">
         <IconComponent
           class="icon-svg progress-arrow"
           icon-name="progress-arrow"
@@ -18,7 +18,7 @@
       Previous
     </div>
     <div
-      class="pagination-controls-button next"
+      class="label pagination-controls-button next"
       :class="{ disabled: currentPage === numberOfPages }"
       @click="changePage('next')"
     >

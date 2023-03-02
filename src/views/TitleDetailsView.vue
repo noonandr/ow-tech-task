@@ -1,18 +1,23 @@
 <script>
 import { mapGetters } from "vuex";
 
+import ToastMessage from "@/components/ToastMessage.vue";
+import LoadingAnimation from "@/components/LoadingAnimation.vue";
 import AppButton from "@/components/AppButton.vue";
 import TitleDetailsInfomration from "@/components/TitleDetailsInfomration.vue";
 
 export default {
   name: "TitleListView",
   components: {
+    ToastMessage,
+    LoadingAnimation,
     AppButton,
     TitleDetailsInfomration,
   },
   data() {
     return {
-      loading: true,
+      loading: false,
+      error: null,
     };
   },
   computed: {
@@ -27,9 +32,19 @@ export default {
     },
   },
   mounted() {
-    this.$store.dispatch("GetTitleData").then(() => {
-      this.loading = false;
-    });
+    if (this.titles.length === 0) {
+      this.loading = true;
+    }
+    this.$store
+      .dispatch("GetTitleData")
+      .then(() => {
+        this.loading = false;
+        this.eror = null;
+      })
+      .catch((error) => {
+        this.error = error.message;
+        this.loading = false;
+      });
   },
 };
 </script>
@@ -41,6 +56,8 @@ export default {
         <AppButton> Back </AppButton>
       </router-link>
     </div>
+    <ToastMessage type="error" :message="error" v-if="error" />
+    <LoadingAnimation v-if="loading" />
     <TitleDetailsInfomration
       :information="information"
       v-if="!loading && titles.length > 0"
@@ -65,5 +82,6 @@ export default {
 
 .title-details-view-title {
   flex: 1 0 100%;
+  margin-bottom: size(3);
 }
 </style>
